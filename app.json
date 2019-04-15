@@ -1,0 +1,40 @@
+{
+  "name": "PIA by Comply",
+  "description": "",
+  "keywords": [
+    "ruby-on-rails"
+  ],
+  "repository": "https://github.com/imagine-app/pia-back",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:create db:migrate"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "image": "heroku/ruby",
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    },
+    {
+      "plan": "heroku-redis:hobby-dev"
+    },
+    {
+      "plan": "logentries:tryit"
+    }
+  ],
+  "buildpacks": [
+    { "url": "heroku/metrics"},
+    { "url": "heroku/ruby"}
+  ],
+  "environments": {
+  }
+}

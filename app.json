@@ -10,6 +10,14 @@
   "scripts": {
     "postdeploy": "bundle exec rake db:create db:migrate"
   },
+  "env": {
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "ALLOWED_CORS_ORIGINS": {
+      "value": "*"
+    }
+  },
   "formation": {
     "web": {
       "quantity": 1,
